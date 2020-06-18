@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>369게임</title>
+<script>
+	
+	var num = prompt("<369 게임> 10 - 100사이의 숫자를 입력 : ");
+	
+	
+	function game(num){
+		
+		for(var a = 1; a <= Number(num); a++){
+			
+			let result = a;
+			let one = a%10;
+			let ten = Math.floor(a/10);
+			
+			if(one == 3 || one == 6 || one == 9){
+				result = "짝";				
+			}
+			
+			
+			if(ten == 3 || ten == 6 || ten == 9){
+				result = "짝";
+				if(one == 3 || one == 6 || one == 9){
+					result = "짝짝";				
+				}				
+			}
+			
+			
+			if(one == 0){
+				result = '숑';
+				for(var i = 0; i < ten; i++){
+					result = '뽀' + result;					
+					}
+				if(ten == 3 || ten == 6 || ten == 9){
+					document.write("짝");
+				}
+				
+				
+			}
+			
+			document.write(result +  "<br>");
+		}
+		
+	}
+	
+	game(num);
+	
+	
+		
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

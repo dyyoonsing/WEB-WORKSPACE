@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1 ~ h2{ /* h1태그에서 같은 형제들(***오른쪽방향) 중에 h2인애들!! 
+				선택되는 애는 결국 h1 밑에 있는 h2만	*/
+		color : red;
+	}
+	
+	h1 + h2{ /* 형제 연산자 : h1 바로 뒤쪽으로 h2가 나오면!!! 꼭 바로 뒤여야함  */
+		color: blue;
+	}
+</style>
+</head>
+<body>
+
+	<h2>Header 2-1</h2>
+	<h1>Header 1-1</h1>
+	<h3>Header 3-1</h3>
+	<h2>Header 2-2</h2>
+	<h2>Header 2-3</h2>
+	<h2>Header 2-4</h2>
+	<h2>Header 2-5</h2>
+	<h1>Header 1-2</h1>
+	<h2>Header 2-6</h2>
+	<h2>Header 2-7</h2>
+	
+</body>
+</html>

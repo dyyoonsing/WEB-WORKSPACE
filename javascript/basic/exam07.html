@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//입력하라고 뜨는 창
+	var num = prompt("정수를 입력하세요");			
+	
+	
+	alert(num + " : " + typeof num);		//num이 스트링이 나옴! prompt 함수는 리턴값 무조건 string!!
+											//취소하면 null: object 나옴
+
+											
+	num = Number(num);
+	alert(num + " : " + typeof num);		//typeof가 number가 됨
+	
+	var msg = num % 2 == 0? "짝수" : "홀수";
+	alert(msg);
+	
+	//`backtick? 이게 ecms??6때 추가된 기능임
+	
+	switch(num % 2){
+	case 0:
+		alert(num + "은 짝수입니다");
+		break;
+	case 1:
+		alert(num + '은 홀수입니다');
+		break;
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

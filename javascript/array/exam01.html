@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num;
+	document.write(num + 10); 	//결과값 : NAN (not a number) undefined는 더하기 연산이 불가함
+	var array = ['A', 10, 12.34, "hello", true, null, 40, undefined];  //모든 타입 다 넣을 수 있음 collection과 비슷
+//	alert(typeof array); //object
+	
+	
+	document.write(array[0] + '<br>');
+	document.write(array[1] + '<br>');
+	document.write(array[2] + '<br>');
+	document.write(array[3] + '<br>');
+	document.write(array[4] + '<br>');
+	document.write(array[5] + '<br>');
+	document.write(array[6] + '<br>');
+	document.write(array[7] + '<br>');
+	document.write(array[8] + '<br>');	//undefined로 나옴 (에러 안남)
+	
+	document.write('array : ' + array + "<br>");		//array : A,10,12.34,hello,true,,40  -> null은 안나옴
+	
+	array[8] = false;
+	array[11] = 123;
+	//8번지에 존재하지 않았지만 넣으면 false가 들어감 - 자동으로 유연하게 데이터가 들어감
+	document.write('array : ' + array + "<br>");	//array : A,10,12.34,hello,true,,40,,false,,,123
+	document.write('배열의 원소 개수 : ' + array.length + '개<br>');	//12개
+	
+	array[array.length] = "add";
+	document.write('배열의 원소 개수 : ' + array.length + '개<br>');	//13개
+	
+	array.push('end'); //마지막에 추가
+	document.write('배열의 원소 개수 : ' + array.length + '개<br>');	//14개
+	document.write('array : ' + array + "<br>");
+	
+	var num = array.pop(); //마지막 삭제
+	document.write('삭제된 원소 : ' + num + "<br>");
+	
+	var str = "hello world!!";
+	document.write(str + '의 길이 : ' + str.length + '개 <br>' );		//hello world!!의 길이 : 13개
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

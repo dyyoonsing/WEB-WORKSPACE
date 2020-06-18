@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var words = [ 'banana', 'pineapple', 'dragonfruit', 'mangosteen' ];
+
+	//후보를 추가할 수 있게 length로 랜덤을 돌린다
+	var ran = Math.floor(Math.random() * words.length);
+	var guess = [];
+
+	//플레이어의 추측 글자
+	for (let i = 0; i < words[ran].length; i++) {
+		guess[i] = '*';
+	}
+
+	//기회
+	let times = 1;
+
+	//기회는 10번
+	while (times <= 10) {
+
+		var myChar = prompt(times + "번째 시도입니다\n" + guess.join(" ")
+				+ "\n문자 하나를 입력하세요(a - z)");
+
+		if (words[ran].indexOf(myChar) == -1) {
+			//입력한 단어가 없을때
+			alert("<" + myChar + ">" + "는 존재하지 않습니다.");
+			times++;
+		} else {
+			//입력한 단어가 있을때
+			for (var j = 0; j < words[ran].length; j++) {
+
+				var temp = words[ran].indexOf(myChar, j);
+				guess[temp] = myChar;
+				if (temp == -1) {
+					break;
+				}
+			}
+
+			var yesOrNo = prompt(guess.join(" ") + "\n정답을 아시겠습니까??(y/n)");
+			if (yesOrNo === 'y') {
+				var myAns = prompt("내 정답은 : ");
+				if (myAns === words[ran]) {
+					alert("정답입니다:) 축하합니다");
+					break;
+				} else {
+					alert("오답입니다:( 아쉽습니다");
+					times++;
+				}
+			} 
+			//입력한 단어가 있을 경우 times++되지 않는다
+		}
+
+		if (times > 10) {
+			alert("10번의 기회를 다 썼습니다. 다음에 또 도전하세요 :)")
+		}
+	}
+</script>
+
+</head>
+<body>
+
+
+
+</body>
+</html>

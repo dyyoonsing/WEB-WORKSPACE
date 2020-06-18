@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var str =  'alert("hello");';
+		str += 'var number = 10;';			//선언부에 var number 이미 선언 - 직접 스크립트에 쓴것처럼 작동한다!
+		str += 'alert(number);';
+		str += 'var array = [10,12.34, true];';
+		str += 'alert("배열의 요소개수 : " + array.length + "개");';
+		
+	
+	eval(str);			//eval이 가지고 있는 문자열을 실행하라!
+	
+	number += 30;
+	alert('number : ' + number);		//number : 40
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

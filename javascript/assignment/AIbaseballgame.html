@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//  A.I. 야구게임 - 10개 중 out을 찾아서 경우의 수를 줄일거야! or 
+	/*
+		1. 컴퓨터가 숫자 3개를 랜덤으로 생성
+		2. 사람이 strike, ball, out, correct을 입력 
+			a. 만약 아웃이면 추측할 숫자 3개를 제외
+			b. 만약 1strike면 한자리식 고정, 만약 2strike면 두자리식 고정  - 어느 숫자가 고정인지 찾기(숫자 바꾸지 않기)
+			c. 만약 1ball, 2ball일 경우 - 
+			
+		
+		경우
+		1. out
+		2. 2 strike
+		3. 1 strike 2 ball
+		4. 1 strike 1 ball
+		5. 1 strike 
+		6. 			1 ball
+		7. 			2 ball
+		8. success
+				
+			   
+	
+	*/
+
+	
+	function game(){
+		
+		//전체 숫자
+		//숫자가 사용자가 생각한 숫자가 아니면 -1로 바꿈
+		var scope = [0,1,2,3,4,5,6,7,8,9];
+		
+		//첫번째 추측 - 전체 숫자를 shuffle해서 앞 3개를 뽑아낸다		
+		var j, x, i; 
+		for (i = scope.length; i; i -= 1) { 
+			j = Math.floor(Math.random() * i); 
+			x = scope[i - 1]; 
+			scope[i - 1] = scope[j]; 
+			scope[j] = x; 
+		}
+		
+		
+		
+		
+		var comNum = [,,];
+		
+		for(var temp = 0; temp < comNum.length; i++){
+			
+		}
+		
+		
+		
+
+
+		
+		
+		
+	}
+	
+	game();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

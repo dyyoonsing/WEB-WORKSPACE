@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	//java의 오버라이딩을 arguments로 조절할수 있겟네!
+	function aaa(){
+		console.log(arguments);
+		switch(arguments.length){
+		case 0 :
+			alert('call aaa()...');
+			break;
+		case 1 : 
+			alert('data : ' + arguments[0]);
+			break;
+		case 2 :
+			alert('a : ' + arguments[0] + ' ,b : ' + arguments[1]);
+		}
+	}
+	
+	/* function aaa(data){
+		alert('call aaa(Data)...');
+	}
+	
+	function aaa(a, b){
+		alert('call aaa(a, b)...');		
+	} */
+
+	aaa();
+	aaa('data');
+	aaa("hello", 20);
+	/* aaa(10, 20, 30, 40 ,50);  */ //매개변수 맞지 않아도 자바스크립트에서는 함수명만 중요함! 매개변수는 중요하지 않음
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

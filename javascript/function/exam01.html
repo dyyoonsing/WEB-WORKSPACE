@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function testFunction(){
+		alert('call...');		
+	}
+	
+	function testFunciton2(data){
+		//모든 매개변수 var니까 생략 가능
+		alert('data : ' + data);
+	}
+	
+	function testFunction3(data, data2){
+		alert(`data : ${data}, data2 : ${data2}`)
+		
+	}
+	
+	function sum(a, b){
+		return a+b;
+	}
+	
+	//선언적 함수 방식!!! 함수에도 hoisting이 일어남  / javascript에 함수 선언적 함수, 익명 함수가 있다
+	////////////////////////////오버로딩 지원 안함! 맨 마지막에 재정의된 애가 aaa()가 됨, 함수를 호출할때 매개변수는 아무 상관 없음!
+	function aaa(){
+		alert('aaa()');
+	}
+	
+	function aaa(data){
+		alert('aaa(data)');
+	}
+	
+	
+	function aaa(a, b){
+		alert('aaa(a, b)');
+	}
+	
+	var temp = function func(){
+		alert('call func()...');
+	}
+	
+	//익명함수 선언
+	var function01 = function(){
+		alert('function01()...');			//함수 이름은 사실상 쓸모없으니 생략 가능 - "익명함수", 함수리터럴
+	}
+	
+	
+	
+	var aaa = function(){
+		alert('익명함수aaa() 호출');
+	}
+	
+	function aaa(){
+		alert('선언적 함수 aaa() 호출');
+	}
+	
+	function getSum(a,b){
+		let s = 10;
+		while(a <= b){
+			s += a++;
+		}
+		return s;
+	}
+	
+	function printSum(a,b){
+		//alert('1~10까지의 총합 : ' + getSum(a,b));
+		
+		function sum(a,b){
+			let s = 0;
+			while(a <= b){
+				s += a++;
+			}								//내부적으로 자기 안에서만 도는 함수를 만들 수 있음! 위에 있는 sum 함수가 밑으로 내려와도 결과값 55로 동일
+			return s;
+		}
+		alert('1~10사이의 총합 : ' + sum(a,b));
+	}
+	
+	function callbackFunc(f){
+		f();					
+		//인자로 함수를 받을 수 있다! javascript에서는 함수의 매개변수로 함수를 받을 수 있다
+	}
+	
+	
+	////////////////////////////////함수 호출부./////////////////////////////////////////
+	
+	callbackFunc(function(){
+		alert('익명함수 호출......');
+	});
+	callbackFunc(aaa);
+	callbackFunc(temp);
+	callbackFunc(testFunction);
+	
+	
+	
+//	var total = getSum(1, 10);
+//	alert('1~10까지의 총합 : ' + total);
+	printSum(1, 10);
+	
+	aaa();				///////////////선언적 함수가 밑에 있어도 익명함수 aaa가 호출됨 - 
+						///////////////같은 이름의 익명함수, 선언적함수가 있으면 익명함수가 우선권이 높다! 무조건 먼저
+	temp();			//function 이름이 아닌 변수 이름으로 실행해야 한다	
+	aaa();	
+	var total = sum(12, 45);
+	alert('총합 : ' + total);
+	
+	testFunction();
+	testFunciton2(100);
+	testFunciton2('hello');
+	testFunction3('A', 12.34);
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

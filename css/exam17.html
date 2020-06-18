@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1:first-child{ 	/* 형제 중에서 제일 첫애만! sub의 경우에는 첫번째가 h2니까 안됨  // 만약 타입이기만하면 되면 first-of-type으로!  */
+		color:red;
+	}
+	
+	h2:last-of-type{
+		color:aqua;
+	}
+	
+	p:first-line{
+		text-decoration : underline;
+	}
+	
+	p::first-letter{
+		font-size:4em;
+	}
+	
+	p::selection{
+		background-color: yellow;
+	}
+	
+	h2::before{
+		background-color: gray;
+	}
+</style>
+</head>
+<body>
+
+	<p>
+		ABCDEFGHIJKLMN<br>
+		OPQRSTUVWXYZ
+	</p>
+	<p>
+		abcdefghijklmn<br>
+		opqrstuvwxyz
+	</p>
+	
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h3>Header-3</h3>
+	<h4>Header-4</h4>
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h6>Header-6</h6>
+	
+	<div>
+		<h2>Sub-2</h2>
+		<h1>Sub-1</h1>
+	</div>
+</body>
+</html>

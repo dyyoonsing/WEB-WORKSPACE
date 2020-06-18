@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Pacifico&display=swap');
+	
+	body{
+		font-size: 16pt;
+		/* medium이 디폴트
+			12pt가 16px
+			em? 대문제 M을 기준으로 얼만큼 쓸것인가
+			일반적으로 pt 많이 씀
+		*/
+		font-family: "궁서", '굴림'; 
+		/*쌍따옴표 작은따옴표 다 됨 / 
+			콤마는 1순위 2순위 정함 1순위 폰트가 없으면 2순위 폰트를 보여줘*/
+		
+	}
+	
+	
+	div{
+		font-family : 'Nanum Pen Script', '나눔바른펜 보통',"NanumBarunpenB";
+		font-size : 16pt;
+	}
+	
+	.div01{
+		font-family : 'Pacifico', 'Do Hyeon';
+		min-height: 200px;
+		font-size: 16pt;
+		background-color: pink;
+		font-weight: 100;
+		font-style: italic;
+		font-variant: small-caps; /*소문자가 대문자로 나옴*/
+	}
+	
+	
+</style>
+</head>
+<body>
+	안녕하세요
+	<div>
+		hello 안녕~
+	</div>
+	<div class = "div01">
+		welcome!<br>
+		hello<br>
+		환영합니다
+	</div>
+</body>
+</html>

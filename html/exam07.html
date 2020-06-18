@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>html 특수문자 표현</h2>
+	<br>태그는 줄넘김 태그입니다.<br>
+	&lt;br&gt;태그는 줄넘김 태그입니다.<br>
+	[&nbsp;]는 공백문자를 표현합니다.<br>
+	[&amp;nbsp;]는 공백문자를 표현합니다.<br>
+	
+	
+	<h2>AccountMain.java</h2>
+	<code>
+	package kr.ac.kopo.assignment.day17;
+	
+	public class AccountMain {
+		
+		public static void main(String[] args) {
+			
+			Account ac = new Account("홍길동", 10000);
+			new User("홍길동", ac);
+			new User("어머니", ac);
+			new User("아버지", ac);			
+		}
+	}
+	</code>
+	<hr color = "blue">
+	<pre>
+	package kr.ac.kopo.assignment.day17;
+	
+	public class AccountMain {
+		
+		public static void main(String[] args) {
+			
+			Account ac = new Account("홍길동", 10000);
+			new User("홍길동", ac);
+			new User("어머니", ac);
+			new User("아버지", ac);			
+		}
+	}
+	</pre>
+	
+	<p>
+		xxx라는 단어는 처음으로 <q>bbb</q>에서 언급되었습니다.
+		<!--  인용은 쌍따옴표로 표현됨 <q></q> -->
+	</p>
+	
+	<!--  인용구문을 쓸때 쌍따옴표가 아닌, 태그를 이용해서 쓰기도 함. 
+	사이트 같은 경우 화면에는 나오지 않음 -->
+	<blockquote cite = "https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%8B%B0%EB%B8%8C_%EC%9E%A1%EC%8A%A4">
+	스티븐 폴 "스티브" 잡스(영어: Steven Paul "Steve" Jobs, 1955년 2월 24일 ~ 2011년 10월 5일)는 미국의 기업인이었으며
+	애플의 전 CEO이자 공동 창립자이다.<br>
+	2011년 10월 5일 췌장암으로 사망했다.
+	</blockquote>
+	
+	
+	
+	
+
+</body>
+</html>
+
+
+
+
+
+
+

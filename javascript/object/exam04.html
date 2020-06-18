@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	//let 쓰는걸 권장
+	
+	function makePerson(name, phone, addr){ 
+		var p = {
+			'name' : name,
+			'phone' : phone,
+			'addr' : addr,			// : 왼쪽은 속성명 오른쪽은 속성값으로 인식
+			'info' : function(){
+				let msg = '';
+				for(let key in this){
+					if(key != 'info')
+						msg += key + ' : ' + this[key] + '<br>';
+				}
+				document.write(msg)
+			}
+		}
+		return p;
+	}
+	
+	var person = makePerson('홍길동', '010-1111-2222', '경기도 광명시');
+	person.info();
+	
+	
+	let persons = [];
+	persons.push(makePerson('홍길동', '010-1111-2222', '경기도 광명시'))
+	persons.push(makePerson('윤길동', '010-1444-3333', '서울시 성북구'))
+	
+	for(let i in persons){
+		persons[i].info();
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+

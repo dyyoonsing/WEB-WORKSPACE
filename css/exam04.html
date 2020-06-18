@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		position: absolute;
+		 /*
+		 absolute
+		 고정된 ~를 기준으로 ~~ 위치를 지정하겠다.
+		 덮어쓰기 됨 : 겹치는 순서로 인해 두번째꺼만 나옴(default)
+		 
+		 */
+		width:100px;
+		height:100px;
+	}
+	
+	.div01{
+		top: 50px;
+		background-color : yellow;
+		z-index : 2;
+		/* z-index가 큰게 앞에 나옴!
+		*/
+	}
+	
+	.div02{
+		left: 50px;
+		background-color: orange;
+		z-index : 1;
+	}
+	
+	.div03{
+		width: 200px;
+		height: 200px;
+		left:200px;
+		top: 200px;
+		background-color: lightgray;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<div class ="div01">첫번쨰 사각형</div>
+	<div class ="div02">두번쨰 사각형</div>
+	<div class ="div03">
+		<div class ="div01"></div>
+		<!-- absolute는 내 부모의 위치가 기준이 됨!   -->
+	</div>
+
+</body>
+</html>

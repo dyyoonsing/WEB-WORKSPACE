@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = 10;
+	var num2 = new Number(10);
+
+	document.write('num : ' + num + ' : ' + (typeof num) + '<br>'); 	//number
+	document.write('num2 : ' + num2 + ' : ' + (typeof num2) + '<br>'); 	//object
+	//prototype은 object형에만 정의할 수 있다! - num은 불가
+
+	Object.prototype.info = function() {
+		alert(this)
+	}
+
+	num.info() //이거 원래 안됨 오류발생
+	num2.info()
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#numberList li {
+		float : left;
+		/*
+		margin-right : 50px; 
+		*/
+		margin: 0px 25px 0px 25px;
+		/* margin은 상하좌우를 다 말함  top right buttom left 순임 / 두개만 쓰면 위랑 옆  margin: 0px 25px*/
+		list-style: none;
+		/* list-style-image: url(../html/images/malski.jpg); 
+		list-style-position: inside; */
+	}
+	
+	li:first-child{
+		color:orange;
+	}
+	
+	li:last-child{
+		color : pink;
+		}
+	
+	li:nth-child(2n){
+		color:green;
+	}
+	
+	p {
+		clear: both;
+	}
+	
+	a:link{ /* a[href]랑 똑같음  */
+		color: lime;
+		text-decoration: line-through;
+	}
+	
+	a:visited{ /* a 태그 중에서 방문한 적이 있는 */
+		color: lime;
+		
+	}
+	
+	
+	a:hover{ /* 마우스를 위에 올려놓으면.... */
+		background-color: pink;
+	
+	}
+	
+	:root{
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+	<ul id = "numberList">
+		<li>ONE</li>
+		<li>TWO</li>
+		<li>THREE</li>
+		<li>FOUR</li>
+		<li>FIVE</li>
+		<li>SIX</li>
+		<li>SEVEN</li>
+		<li>EIGHT</li>
+		<li>NINE</li>
+		<li>TEN</li>
+	</ul>
+	
+	<p>
+		<a href="https://www.naver.com">NAVER</a>;
+		<a href="http://www.daum.net">DAUM</a>
+	
+	</p>
+</body>
+</html>

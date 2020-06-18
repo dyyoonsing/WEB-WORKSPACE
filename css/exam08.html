@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		width: 300px;
+		margin: 10px;
+		padding:10px;
+		text-align: center;
+		border: 2px solid red;
+		display : table-cell;			
+		/*필요한 글자만큼만 옆으로 나옴 -  inline / 할당된 크기만큼 옆으로 옴 - inline-block / table-cell 옆으로 감*/
+	}
+	
+	.div01{
+		border-radius: 20px;
+	
+	
+	}
+	
+	.div02{
+		border-radius: 20px;
+		border-bottom-left-radius: 0px;
+		border-top-right-radius: 0px;
+		box-shadow: 10px 10px 10px pink; /*가로 세로 번짐정도 색*/
+	}
+	
+	.div03{
+		border-radius: 60px/30px;
+		height : 100px;
+	
+	}
+</style>
+
+</head>
+<body>
+
+	<div class="div01">사각형</div>
+	<div class="div02">사각형02</div>
+	<div class="div03">사각형03</div>
+	
+	
+</body>
+</html>

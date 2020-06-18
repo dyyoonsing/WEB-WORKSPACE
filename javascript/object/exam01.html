@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var person = {
+	/*  '속성명' : 속성값,
+		'속성명' : 속성값,     */
+		
+		'name' : '홍길동',
+		phone : '010-1111-2222',
+		'phone-home' : '02-1111-2222'
+	};
+	delete(person.addr)
+	document.write('속성 name 존재여부 : ' + ('name' in person) + '<br>');	//속성 name 존재여부 : true
+	document.write('속성 addr 존재여부 : ' + ('addr' in person) + '<br>');	//속성 addr 존재여부 : false
+	
+	console.log(person)
+	person.addr = '경기도 광명시';
+	console.log(person)
+	
+	person.addr = '경기도 광명시';
+	document.write('속성 addr 존재여부 : ' + ('addr' in person) + '<br>');	//속성 addr 존재여부 : true
+	
+	
+	/* 
+	console.log(typeof person);		//object
+	alert(person);					//object Object
+	console.log(person);			//java script에 정의한대로 나옴
+	
+	alert('name : ' + person['name']);
+	alert('phone : ' + person['phone']);
+	
+	alert('name : ' + person.name);
+	alert('phone : ' + person.phone);
+	 */
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

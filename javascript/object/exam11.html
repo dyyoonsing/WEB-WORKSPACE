@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var data = new String("Hello JAVASCRIPT!!!")
+	
+	String.prototype.change = function(){
+		return this.toUpperCase().bold().fontcolor('red').fontsize('20pt').link('http://www.naver.com')
+	}
+	
+	document.write('data : ' + data + '<br>')
+	document.write('change() : ' + data.change() + '<br>')
+	
+	var str = 'HELLO WORLD';
+	
+	
+	document.write('<hr>')
+	//String에서 length만 속성이고 나머지는 다 함수임!!!!!!
+	document.write('길이 : ' + str.length + "<br>")
+	document.write('3번째 문자 : ' + str.charAt(2) + '<br>')
+	document.write('0번째 문자의 아스키코드 : ' + str.charCodeAt(0) + '<br>')
+	document.write('concat("!!!") : ' + str.concat('!!!') + "<br>")
+	document.write('search("llo") : ' + str.search('LLO') + "<br>")
+	document.write('search("llp") : ' + str.search('LLP') + "<br>")
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

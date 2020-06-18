@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	var won = '1000원';
+	var dollar = '1.78$';
+	
+	document.write('Number : ' + Number(won) + "<br>");				//NaN 오류 발생 - number는 오직 숫자문자열로 이루어진 애들만 쓸 수 있다
+	document.write('parseInt : ' + parseInt(won) + '<br>'); 		//숫자만 변환! parseInt와 number의 차이 기억하기
+	document.write('parseInt : ' + parseInt(dollar) + '<br>'); 		// . 이후는 안나오네!
+	document.write('parseFloat : ' + parseFloat(dollar) + "<br>");	//1.78나옴
+	//내장객체의 특징이 대문자로 시작(Number가 내장객체임)
+	
+	document.write('<hr>');
+	
+	var str = '12345';
+	var num = Number(str);
+	var num2 = parseInt(str);			
+
+	document.write(str + 100 + '<br>');			//12345100
+	document.write(num + 100 + '<br>');			//12445
+	document.write(num2 + 100 + '<br>');		//12445
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

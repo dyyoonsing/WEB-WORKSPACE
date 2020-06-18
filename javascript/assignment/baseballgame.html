@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>야구게임</title>
+<script>
+
+	
+	function random(){
+		
+		var ranNums = [0, 0, 0];
+		
+		
+		for(i = 0; i < ranNums.length; i++){
+			ranNums[i] = Math.floor(Math.random()*10);
+			for(j = 0; j < i; j++){
+				if(ranNums[i] == ranNums[j]){
+					i--;
+				}
+			}			
+		}
+		return ranNums;
+		
+	}
+	
+	
+	
+	function ballandstrike(result, comNums, nums){
+		
+
+		
+		result[0] = 0;
+		result[1] = 0;
+		
+		
+		for(i = 0; i < nums.length; i++){
+			if(nums[i] == comNums[i]){
+				result[0]++;
+			}else{
+				for(j = 0; j < comNums.length; j++){
+					if(nums[i] == comNums[j]){
+						result[1]++;
+					}
+				}
+			}
+		}
+
+		
+		if(result[0] == 0 && result[1] == 0){
+			++result[2];
+			alert(result[2] + " out \n");
+			
+		}else{
+			
+			alert(result[0] + "strike / " + result[1] + "ball \n" /* + comNums */);		//결과 미리보기
+			
+		}
+		
+		
+		return result;
+	}
+	
+	
+	
+	
+	function game(){
+		var comNums = random();
+		var nums = [0,0,0];
+			
+		var result = [0,0,0];		//strike(number), ball(number), out(number)
+		var cnt = 1;
+		 
+		while(cnt <= 10){
+			nums = prompt(cnt + "차 시도입니다!!!!!!\n" + "숫자 3개 입력(공백으로 구분)").split(" ");
+			
+			
+			
+			result = ballandstrike(result, comNums, nums);
+
+			if(result[0] == 3){
+				alert("축하합니다!!!! 정답입니다!!!!\n정답은 : " + comNums);
+				break;
+			}
+			
+			if(cnt == 10 && result[0] != 3){
+				alert("아쉽습니다! 기회를 다 소진했습니다ㅜㅠ\n정답은 : " + comNums);
+				break;
+			}
+			if(result[2] == 3){
+				alert("아쉽습니다! 아웃을 3번 받았습니다ㅜㅜ \n정답은 : " + comNums );
+				break;
+			}
+			
+			cnt++;
+			
+			
+		}
+		
+	}
+	
+	
+	
+	
+	game();
+	
+	
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

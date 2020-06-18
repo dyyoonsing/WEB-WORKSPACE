@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>neomoo jamwaa</title>
+<style>
+	p, h3{
+		color : blue;
+	}
+	
+	.css01{
+		color : pink;
+	}
+	
+	h3.css01{
+		background-color: black;
+	}
+	
+	#id02{
+		background-color : yellow;
+	}
+	
+	.css03{
+		background-color : yellow;
+	}
+	
+	
+	/*id와 클래스 중에서 우선순위는 id가 더 높다!
+	  class 속성은 여러개 존재할 수 있다. id는 하나의 문서 안에 동일한 id를 가진 애는 없다.(unique)
+	  
+	*/
+	
+
+</style>
+</head>
+<body>
+	<p class ="css01">안녕하세요</p>
+	<div id = "id01">
+		안녕하세요
+	</div>
+	<h3 class ="css01">안녕하세요</h3>
+	
+	<p>안녕하세요</p>
+	<div id = "id02">
+		안녕하세요
+	</div>
+	<h3>안녕하세요</h3>
+	
+	<p class = "css01 css03">안녕하세요</p>
+	
+</body>
+</html>

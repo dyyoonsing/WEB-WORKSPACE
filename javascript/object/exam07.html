@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(name, phone, addr){
+	/*  let name = n;
+		var phone = p;
+		var addr = a;   */
+		//지역변수 외부에서 접근 불가
+		
+		/* 	
+		this.getName = function(){		//함수 안에 함수 만들기
+			return name;
+		}
+		 */
+		 
+		this.getName = ()=>name
+		
+		this.setName = function(n){
+			name = n;
+		}
+	}
+	
+	var p = new Person('홍길동', '010-1111-2222', '경기도 광명시')
+	alert("변경전 : " + p.getName())
+	p.setName('윤다영')
+	alert('변경후 : ' + p.getName())
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

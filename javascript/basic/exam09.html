@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	var a = 10;
+	let b = 20;
+	const c = 30;
+	
+	alert(`a = ${a}, b = ${b}, c = ${c}`);
+
+	a = a * 5;
+	b = b * 5;
+//	c = c * 5;				//constant 변수는 상수값이기 때문에 값 대입 불가. 오류발생
+	
+	alert(`a = ${a}, b = ${b}, c = ${c}`);
+	
+	var a = 100;			//var 변수는 hoisting 일어남, 실제 선언은 한번만 되어 있음!
+//	let b = 100;			//let은 hoisting 발생하지 않는다. 이미 선언되어있기 때문에 또 선언할 수 없다. 오류 발생(재선언금지)
+	
+	alert(`a = ${a}, b = ${b}, c = ${c}`);
+	
+	{
+		var temp = 1000;
+		let letTemp = 2000;
+		alert(`temp : ${ temp }, letTemp : ${ letTemp }`);
+		
+	}
+	
+	alert(`temp : ${ temp }, letTemp : ${ letTemp }`);		//tetTemp 변수 모른다
+	//var 형은 함수 scope 함수 안에서 만들어진 건 함수 내에서만! let, const는 블럭 scope를 가지고 있다!
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

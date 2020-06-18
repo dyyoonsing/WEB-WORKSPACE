@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(name, phone, addr){		
+/* 
+	new를 이용해서 호출할 수 있는 함수 - new 키워드로 생성가능
+	자바스크립트에서는 객체라는 개념이 없음.  
+	내 안에 prototype을 가지고 있으면 객체라고 부름.
+	new에서 저 함수를 호출하면 내부적으로 prototype을 가지게 해줌
+	원시타입만 prototype을 못씀 ex) var a = 10;
+*/
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;		
+		
+		this.info = function(){
+			var msg = '';
+			for(let key in this){
+				if((typeof this[key] != 'function'))
+					msg += key + ' : ' + this[key] + "<br>"
+			}
+			document.write(msg)
+		}
+	}
+
+	var p = new Person('홍길동', '010-1111-2222', '서울시 서초구')
+	p.info();
+	
+//	console.log(p)		//person형으로 인식됨(object형이 아닌) typeof값을 봤을때 person
+
+	var p2 = new Person();
+	p2.info();		//undefined
+	
+	Person.prototype.aaa = function(){		//호출은 p.aaa해도 됨! 선언할때만 prototype에 정의
+		alert('aaa')
+	}
+	
+//	console.log(p)
+	p.aaa()
+	p2.aaa()
+	
+	document.write("p instanceof Person : " + ( p instanceof Person) +"<br>")
+	document.write("p instanceof Object : " + ( p instanceof Object) +"<br>")
+	
+	
+	p.aaa = function(){
+		alert('p에서 정의한 aaa');
+	}
+
+	p.aaa()
+	p2.aaa()		//순서는 내 객체 안 우선, 그게 없으면 prototype껄 가져옴
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+//person 객체 복사본 만들기
+
+
+	var person = {
+			name : '홍길동',
+			phone : '010-1111-2222',
+			toString : function(){
+				let msg = ''
+				for(let key in this){
+					if((typeof this[key]) != 'function')
+						msg += key + ' : ' + this[key] + '<br>'
+				}
+				msg += '<hr>'
+				return msg;
+			}
+	}
+	
+	function clone(obj){
+		let object = {};
+		for(let key in obj){
+			object[key] = obj[key]
+		}
+		return object;
+	}
+	
+	//얕은복사 shallow copy
+//	var person2 = person;
+
+//깊은 복사
+//	var person2 = clone(person);
+	
+	var person2 = {...person};		//배열도 객체니까! 전개연산자 쓸수잇음
+	
+	
+	/*
+	var person2 = {};
+	for(let key in person){
+		person2[key] = person[key]
+	}
+	*/
+	
+	document.write(person.toString());
+	document.write(person2.toString());
+	
+	person2.phone = "010-9999-9999";
+	
+	document.write(person.toString());
+	document.write(person2.toString());					//둘다바뀜
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//	var books = ['신데렐라', '콩쥐팥쥐', '피터팬', '백설공주']
+	var books = new Array();
+	
+	books.push('신데렐라')
+	books.push('콩쥐팥쥐')
+	books.push('피터팬')
+	books.push('백설공주')
+	
+	for(let element of books){
+		document.write(element + '&nbsp;&nbsp;&nbsp;')
+	}
+	document.write('<hr>')
+	
+	books.sort()
+	
+	for(let element of books){
+		document.write(element + '&nbsp;&nbsp;&nbsp;')
+	}
+	document.write('<hr>')
+	
+	var nums = [12, 5, 657, 85, 56, 8, 21];
+	document.write(nums + '<hr>')
+	
+	nums.sort()		//숫자를 문자열로 인식해서 정렬함! 그래서 십의자리 기준으로 정렬
+	document.write(nums + '<hr>')
+	
+	//콜백함수
+	nums.sort(function(left, right){
+		return left - right;			//이게 오름차순 
+	})
+	document.write(nums + '<hr>')
+	
+	nums.sort(function(left, right){
+		return right-left;			//이게 내림차순 
+	})
+	document.write(nums + '<hr>')
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

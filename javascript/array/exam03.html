@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var array = [10, 20, 30, 40];
+	var copyArray = array;		
+	var deepCopy = [];
+	
+	for(let data of array){
+		deepCopy.push(data);
+	}
+	
+	
+	var copyArray2 = [...array]; //10, 20, 30, 40을 입력하는거와 동일
+	
+	
+	/* 
+	document.write('array : ' + array + '<br>')
+	document.write('copyArray : ' + copyArray + '<br>')
+	
+	copyArray[2] = 1000;
+	
+	
+	document.write('array : ' + array + '<br>')
+	document.write('copyArray : ' + copyArray + '<br>')	//둘다 1000으로 바뀜! - 주소값이 같기 때문 (shallow copy)
+	 */
+	document.write('<hr>');
+	
+	document.write('array : ' + array + '<br>')
+	document.write('deepCopy : ' + deepCopy + '<br>')
+	document.write('****copyArray2 : ' + copyArray2 + '<br>')
+	
+	deepCopy[2] = 2500;
+	copyArray2[1] = 9999;
+	
+	document.write('array : ' + array + '<br>')
+	document.write('deepCopy : ' + deepCopy + '<br>')
+	document.write('****copyArray2 : ' + copyArray2 + '<br>')
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

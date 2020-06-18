@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	p:only-child{ /* 태그 안에 자식이 하나만 있어야함. 그떄 p 태그여야함  - body에서는 p, h3 다 있으니까 안되고 div태그에서는 onlychild니까 됨*/
+		color: red;
+	}
+	
+	p:only-of-type{ /* 자식이 몇개이든 상관 없음 p가 하나만 있으면 됨 */
+		background-color: yellow;
+	}
+
+</style>
+</head>
+<body>
+	<p>good!!!</p>
+	<h3>안녕~~~</h3>
+	<div>
+		<p>hello world</p>
+	
+	</div>
+</body>
+</html>

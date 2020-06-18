@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type = password]{ /* input[속성명 = 속성값] */
+		background-color: lightgray;
+	}
+	
+	img{
+		width:100px;
+		height:100px;
+		border: 2px solid orange;
+	}
+	
+	img[src $= jpg]{ /* $= 는 ~~로 끝난다는 의미,  ^=는 ~~로 시작의 의미 */
+		border-color: blue;
+	}
+	
+	img[src ^= '../html/images']{
+		border-color:yellow;
+	}
+	
+	img[src *= k]{
+		border-color:purple;
+	}
+</style>
+</head>
+<body>
+	<form>
+		아이디 : <input type="text"><br>
+		패스워드 : <input type="password" ><br>
+		
+	</form>
+	<br>
+	
+	<img src ="../html/images/luki.png">
+	<img src ="../html/images/earth.gif">
+	<img src ="../html/images/malski.jpg">
+	<img src ="../html/images/cat.jpg">
+	
+</body>
+</html>

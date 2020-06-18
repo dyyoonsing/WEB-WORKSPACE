@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		background-color: yellow;
+		transition-property: background-color, border-radius; /* backgroundcolor, 도형에 애니메이션 효과 넣기 (1초에 걸쳐 바꾸기)  */
+		transition-duration: 1s;
+		transition-timing-function: linear;   /* 디폴트는 ease : 느렸다가 마지막에 빨라짐 / linear는 동일함  */
+		transition-delay:1s; /* 1초 후부터 실행  */
+	}
+	
+	div:hover{
+		background-color: green;
+		border-radius: 50%;
+	}
+</style>
+</head>
+<body>
+	<div></div>
+	<!-- 빨간 사각형위에 마우스를 올리면 파란 원이 나오게 -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+
+
+/* 
+	for(var i = 0; i < 3; i++){
+		(function(i){
+			setTimeout(function() {
+				alert(i);
+			}, 0);
+		})(i);
+	}
+	 */
+	
+	
+	
+	var func = function(i) {				//함수가 종료되더라도 값을 유지시키는 기술이 closer
+		return setTimeout(function() {
+			alert(i);
+		}, 0);
+	}
+	
+	for(var i = 0; i < 3; i++){
+		func(i);				//0,1,2만 넘어가지
+	}
+	
+	
+	//0,1,2가 나와야하는데 3,3,3 나옴
+	//SETTIMEOUT에 들어있는 내용은 JAVASCRIPT 모든 내용이 수행되고 난 후에 실행됨
+	//그래서 FOR문 다 돌고 I = 3이 될때 그제서야 FUNCTION이 됨
+	//이런 문제를 해결하기 위해서 CLOSER를 씀!!!!!! SETTIMEOUT을 CLOSER로
+	
+/* 	
+	for(var i = 0; i < 3; i++){
+		setTimeout(function(){
+			alert(i);
+		}, 0);											
+	}
+
+ */
+/* 
+	alert('첫번째');
+	
+	setTimeout(function(){
+		alert('setTimeout()...')
+	}, 0);								//순서가 첫번째, 두번째, setTimeout 순
+										//setTimeout은 일이 다 완료되기 전에는 alert이 수행되지 않는다. 제어권이 넘어갔다가 돌아옴(?)
+										//
+	
+	alert('두번째');
+	
+	 */
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

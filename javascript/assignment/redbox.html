@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		var click = document.getElementById('click')
+		let numInc = document.getElementById('numInc')
+		var num = 0
+		click.onclick = function() {
+			++num;
+			numInc.innerHTML = num + "번 클릭"
+		}
+
+		var decClick = document.getElementById('decClick')
+		let numDec = document.getElementById('numDec')
+		var decNum = 10
+		decClick.onclick = function() {
+			if (decNum > 0)
+				--decNum;
+			numDec.innerHTML = decNum + "번"
+		}
+	}
+</script>
+<style>
+table {
+	border-style: solid;
+	border-color: red;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td id="numInc">0번 클릭</td>
+			<td><input type="button" value="클릭" id="click"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="숫자감소" id="decClick"></td>
+			<td id="numDec">10번</td>
+		</tr>
+	</table>
+</body>
+</html>

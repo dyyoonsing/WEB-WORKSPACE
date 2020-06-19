@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	
+	function clickTimer(){
+		//setTimeout은 window객체 안에 있음
+		setTimeout(function(){
+			alert('3초 지났습니다...')
+		}, 3000) 			
+	}
+	
+	//고전적 이벤트 모델
+	window.onload = function(){
+		let btn = document.getElementById('clickBtn')
+		btn.onclick = function(){
+			alert('click')
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- 
+	인라인 방식의 이벤트 모델
+	-->
+	<input type ="button" value="클릭" onclick="alert('click...')">	
+	<input type="button" value="3초 타이머" onclick="clickTimer()"> 
+	
+	<input type="button" value="클릭2" id="clickBtn">
+	
+</body>
+</html>

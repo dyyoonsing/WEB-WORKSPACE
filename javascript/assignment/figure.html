@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+//super class
+	class Figure{
+		constructor(width, height){
+			this._width = width
+			this._height = height
+		}
+		
+		area(){
+			
+		}
+	}
+	
+//sub class	
+	class Rectangle extends Figure{
+		constructor(width, height){
+			super(width, height)			
+		}
+		area(){
+			return this._width * this._height
+		}
+		
+	}
+	
+	
+	class Square extends Figure{
+		constructor(width){
+			super(width)
+		}
+		area(){
+			return (this._width * this._width)
+		}
+		
+	}
+	
+	class Triangle extends Figure{
+		constructor(width, height){
+			super(width, height)
+		}
+		
+		area(){
+			return (this._width * this._height * 0.5)
+		}
+	}
+	
+	class Circle extends Figure{
+		constructor(radius){
+			super(radius)
+		}
+		
+		area(){
+			return (this._width * this._width * 3.14)
+		}
+	}
+	
+
+
+	var whichFig = parseInt(prompt("도형을 선택하세요\n"
+						+ "1.직사각형\n2.정사각형\n3.삼각형\n4.원\n"));
+	switch(whichFig){
+	case 1:
+		var userNum = prompt("직사각형의 가로, 세로를 입력하세요(공백 구분)").split(" ");
+		let rec = new Rectangle(parseInt(userNum[0]), parseInt(userNum[1]))
+		alert('직사각형의 넓이는 : ' + rec.area())
+		break;
+	case 2:
+		var userNum = parseInt(prompt("정사각형 한 변의 길이를 입력하세요"));
+		let squ = new Square(userNum)
+		alert('정사각형의 넓이는 : ' + squ.area())
+		break;
+	case 3:
+		var userNum = prompt("삼각형의 밑면, 높이를 입력하세요(공백 구분)").split(" ");
+		let tri = new Triangle(parseInt(userNum[0]), parseInt(userNum[1]))
+		alert('삼각형의 넓이는 : ' + tri.area())
+		break;
+	case 4:
+		var userNum = parseInt(prompt("원의 반지름을 입력하세요"));
+		let cir = new Circle(userNum)
+		alert('원의 넓이는 : ' + cir.area())
+		break;
+	default:
+		alert("1~4 중 하나를 입력하세요")
+		break;
+	
+	}
+							
+
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

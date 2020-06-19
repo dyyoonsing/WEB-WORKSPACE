@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		var tag = document.createElement('h1')
+		var tagText = document.createTextNode('Hello')
+//		console.log(tag)
+//		console.log(tagText)
+		tag.appendChild(tagText)
+		document.body.appendChild(tag)
+		//댓글달기같이 새로고침하면 태그 하나씩 더 생겨야하니까
+		
+		var imgTag = document.createElement('img')
+		imgTag.src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"
+//		console.log(imgTag)
+//		document.body.appendChild(imgTag)			
+		
+		var aTag = document.createElement('a')
+		aTag.setAttribute('href', 'http://www.daum.net')
+		aTag.setAttribute('target', '_blank')				//새창뜨게
+//		aTag.href = "http://www.daum.net"
+//		console.log(aTag)
+
+		aTag.appendChild(imgTag)
+		document.body.appendChild(aTag)
+		
+	}
+</script>
+</head>
+<body>
+<!-- 
+	<h1>Hello</h1> //hello 내용은 h1태그의 자식
+	<img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"> //속성은 자식이 아니지
+ -->
+ </body>
+ 
+</html>

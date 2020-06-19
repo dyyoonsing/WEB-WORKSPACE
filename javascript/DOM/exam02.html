@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		//나올수잇는게 하나밖에 없음 그래서 element == 똑같은 기능을 하는게 querySelector()
+		var id = document.getElementById('id')		//id를 찾는 범위가 document
+
+//		document.querySelector('table') //테이블 태그에 해당하는 객체 찾기
+		var id = document.querySelector('#id')
+		
+		console.log(id)
+		id.innerHTML = "아이디"
+		
+		
+		var password = document.querySelector('.pwd')
+		console.log(password)
+	}
+</script>
+</head>
+<body>
+	<table border = "1" style="width:100px; height: 100px">
+		<tr>
+			<td id = "id">ID</td>
+		</tr>
+		<tr>
+			<td class="pwd">PASSWORD</td>
+		</tr>
+		
+		
+	</table>
+</body>
+</html>

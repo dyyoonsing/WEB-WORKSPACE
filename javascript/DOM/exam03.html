@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		//id가 없을때..? td 태그로 하려면 document
+		var tags = document.getElementsByTagName('td')
+//		console.log(tags[0])
+//		console.log(tags[1])
+		tags[0].innerHTML = '아이디'
+		
+//		let nodes = document.querySelector('td')
+//		console.log(nodes)			//td 결과가 아이디만 나오네??? querySelector는 제일 처음애만 가져옴
+				
+		let nodes = document.querySelectorAll('td') //all하면 다 나옴
+		nodes[1].innerText = "패스워드"
+	
+	}
+</script>
+</head>
+<body>
+	<table border = "1" style="width:100px; height: 100px">
+		<tr>
+			<td>ID</td>
+		</tr>
+		<tr>
+			<td>PASSWORD</td>
+		</tr>
+		
+		
+	</table>
+
+</body>
+</html>

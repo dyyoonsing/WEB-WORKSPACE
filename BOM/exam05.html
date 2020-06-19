@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//오디오 내장객체 있음
+	let audio = new Audio()
+	audio.src = "/Lecture-WEB/html/playlist/Kalimba.mp3";
+	
+/* 	function play(){
+		alert('click...')
+		audio.play()
+	} */
+
+</script>
+</head>
+<body>
+	<input type = "button" value="PLAY" onclick="audio.play()">
+	<input type = "button" value="STOP" onclick="audio.pause()">
+</body>
+</html>

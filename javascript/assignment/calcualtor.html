@@ -1,58 +1,97 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+	//연산 과정
+	var result = '';
 
+	//button을 클릭하는 경우
+
+	//숫자, 연산식을 result에 추가한다
+	function btn(num) {
+		result += num;
+		document.getElementById('cal').value += num
+	}
+
+	//percent 누를 경우 0.01을 곱한 값이 출력된다
+	function btnPercent() {
+		result *= 0.01
+		document.getElementById('cal').value = result
+	}
+
+	//Enter를 누를 경우 결과값이 출력된다
+	function btnEnter() {
+		document.getElementById('cal').value = eval(result)
+		result = eval(result)
+	}
+
+	//clear를 누를경우 모든 결과가 삭제된다
+	function btnClear() {
+		result = ''
+		document.getElementById('cal').value = ''
+	}
+
+	//직접 입력할 경우
+	function calculate() {
+		var result = eval(document.getElementById('cal').value)
+
+		if (event.keyCode == 13 || event.keyCode == 61) {
+			//enter나 =를 치면 결과값이 나온다
+			document.getElementById('cal').value = result
+		} else if (event.keyCode == 37) {
+			//%를 치면 0.01이 곱해진 값이 나온다
+			document.getElementById('cal').value *= 0.01
+		}
+	}
 </script>
 <style>
-	input{
-		width : 100%;
-	}
-	
-	
+input {
+	width: 100%;
+}
 </style>
 
 </head>
 <body>
 	<table border="1">
-        <tr>
-            <td colspan="4">
-            	<input type="text" id="cal" style >
-            </td>
-        </tr>
-        
-        <tr>
-            <td><input type="button" value="7"></td>
-            <td><input type="button" value="8"></td>
-            <td><input type="button" value="9"></td>
-            <td><input type="button" value="/"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="4"></td>
-            <td><input type="button" value="5"></td>
-            <td><input type="button" value="6"></td>
-            <td><input type="button" value="*"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="1"></td>
-            <td><input type="button" value="2"></td>
-            <td><input type="button" value="3"></td>
-            <td><input type="button" value="-"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="0"></td>
-            <td><input type="button" value="-"></td>
-            <td><input type="button" value="%"></td>
-            <td><input type="button" value="+"></td>
-        </tr>
-        
-        <tr>
-        	<td colspan="2"><input type="button" value="="></td>
-        	<td colspan="2"><input type="button" value="clear"></td>
-           
-        </tr>
-    </table>
+		<tr>
+			<td colspan="4"><input type="text" id="cal"
+				onKeyPress="calculate()"></td>
+		</tr>
+
+		<tr>
+			<td><input type="button" value="7" onclick="btn(7)"></td>
+			<td><input type="button" value="8" onclick="btn(8)"></td>
+			<td><input type="button" value="9" onclick="btn(9)"></td>
+			<td><input type="button" value="/" onclick="btn('/')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="btn(4)"></td>
+			<td><input type="button" value="5" onclick="btn(5)"></td>
+			<td><input type="button" value="6" onclick="btn(6)"></td>
+			<td><input type="button" value="*" onclick="btn('*')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="btn(1)"></td>
+			<td><input type="button" value="2" onclick="btn(2)"></td>
+			<td><input type="button" value="3" onclick="btn(3)"></td>
+			<td><input type="button" value="-" onclick="btn('-')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="0" onclick="btn(0)"></td>
+			<td><input type="button" value="." onclick="btn('.')"></td>
+			<td><input type="button" value="%" onclick="btnPercent()"></td>
+			<td><input type="button" value="+" onclick="btn('+')"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><input type="button" value="="
+				onclick="btnEnter()"></td>
+			<td colspan="2"><input type="button" value="clear"
+				onclick="btnClear()"></td>
+
+		</tr>
+	</table>
 </body>
 </html>

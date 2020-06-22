@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		alert('ready')
+		
+//		$('ul li').hide()
+//		$('ul li:first').hide()		//이렇게하면 ul li가 li의 배열로 나와서 ul에 따른 첫번쨰 li가 아닌 제일 첫 li만 지워짐
+//		$('ul li:last').hide()
+		$('ul li:first-child').hide()
+		
+	})
+</script>
+</head>
+<body>
+	<h1>동물종류</h1>
+	<ul>
+		<li>호랑이</li>
+		<li>사자</li>
+		<li>코끼리</li>
+		<li>곰</li>
+	</ul>
+	<h1>음식종류</h1>
+	<ul>
+		<li>떡볶이</li>
+		<li>라면</li>
+		<li>김밥</li>
+	</ul>
+</body>
+</html>

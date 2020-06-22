@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* 
+		DOM level 2 
+		표준 이벤트 모델 - addEventListener(이벤트 속성, handler, capturing사용여부 -기본적으로 false)
+	 */
+	window.onload = function(){
+		let btn = document.getElementById('btn')
+		btn.addEventListener('click', function(){
+			alert('button click')
+		}, true)	
+		//capturing하면 button click, span click 순서로 바뀜(이벤트가 상위에서 하위로 내려감) - 원래 버블링은 하위에서 상위로
+		//다른 말이 없으면 bubbling이 우선, capturing을 true로 만드는 순간 상위에서 하위로 바뀜
+		
+		let span = document.querySelector('span')
+		span.addEventListener('click', function(){
+			alert('span click...')
+			//버블링 발생 - span click, button click 순서대로 나오게 됨
+		})
+	}
+</script>
+</head>
+<body>
+	<button id="btn"><span>click</span></button>
+</body>
+</html>

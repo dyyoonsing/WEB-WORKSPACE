@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/*
+	java script object notation - JSON (자바스크립트 객체)
+	JSON.stringify()
+	JSON.p
+*/
+	let person ={
+			'name' : '홍길동',
+			'phone' : '010-1111-2222',
+			'addr' : '서울시 서초구 서초동',
+			toJSON : function(){
+				//JSON.strigify할때 name과 addr만 넘기겠다!
+				return{
+					"name" : this.name,
+					"addr" : this.addr
+				}
+			}
+	}
+	
+//	console.log(person)
+//	console.log(JSON.stringify(person), typeof JSON.stringify(person))
+	
+	let strPerson = JSON.stringify(person)
+	console.log(strPerson)
+	console.log(typeof strPerson)
+	
+	let obj = JSON.parse(strPerson)
+	console.log(obj)
+	console.log(typeof obj)
+	
+	document.write('name : ' + obj.name + '<br>')
+	document.write('phone : ' + obj.phone + '<br>')
+	
+	let str = '{"id" : "hong", "password":"1234"}'
+	//let obj2 = eval(str)
+	let obj2 = JSON.parse(str)
+	console.log(obj2)
+	document.write('<hr>')
+	document.write()
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

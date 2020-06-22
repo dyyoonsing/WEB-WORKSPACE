@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* 
+	//계산기
+	function clickData(obj){
+		let data = obj.value
+		let monitor = document.getElementById('monitor')
+		
+		if(data == 'clear'){
+			monitor.value = '';
+		}else if(data == '='){
+			monitor.value = eval(monitor.value)
+		}else{
+			monitor.value += data
+		}
+	}
+	 */
+	 
+	 
+	 
+	
+</script>
+<style>
+	#monitor{
+		text-align : right
+	}
+	
+	input[type='button']{
+		padding-left: 0 20px;
+		margin: 0px 10px;
+		
+	}
+</style>
+</head>
+<body>
+	<input type="text" id="monitor"><br>
+	<input type="button" value="1" onclick="clickData(this)">
+	<input type="button" value="2" onclick="clickData(this)">
+	<input type="button" value="3" onclick="clickData(this)">
+	<input type="button" value="4" onclick="clickData(this)"><br>
+	<input type="button" value="+" onclick="clickData(this)">
+	<input type="button" value="-" onclick="clickData(this)">
+	<input type="button" value="=" onclick="clickData(this)">
+	<input type="button" value="clear" onclick="clickData(this)">
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	//  고정 형태면 script보다는 css로 하는게 더 좋음
+	$(document).ready(function(){
+		/* 
+		$('div').css({
+			width: '100px',
+			height : '100px',
+			'background-color' : 'red'
+		})
+		 */
+		$('div').hide(1000)
+		$('div').show(1000)
+		
+		$('div').toggle(1000)
+		$('div').toggle(1000)
+		
+		$('div').fadeOut(1000)
+		$('div').fadeIn(1000)
+		
+		$('div').fadeToggle(1000)
+		$('div').fadeToggle(1000)
+		
+		$('div').fadeTo(1000, 0.5)
+	}) 
+	
+	
+	
+</script>
+
+</head>
+<body>
+	<div></div>
+	<button>show/hide</button>
+</body>
+</html>

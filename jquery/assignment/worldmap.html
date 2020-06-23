@@ -12,39 +12,31 @@
 	div{
 		width:20px;
 		height:20px;
-		border-radius:50%;
-		background-color: red; 
+		background-color: red;
+		border-radius: 50%;	
 	}
 	
 	div.ui-helper-hidden-accessible {
-		border: 0;
-		clip: rect(0 0 0 0);
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-	}
+		display:none;
+	} 
 	
-	div.ui-tooltip{
+	.ui-tooltip-content{
+		background-color:white;
 		width:100px;
 		height:100px;
-		border: 3px solid black;
-		background-color: white;
+		padding:0px;
 		border-radius:0;
+		border: 1px solid black;
+		
 	}
-	
-	
-	
-
 
 </style>
 <script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 	$(document).ready(function(){
-				
+		
+		//좌표 찾기		
 		$('html').click(function(event){
 			console.log("X : " + event.pageX + 'Y : ' + event.pageY)
 		})
@@ -78,9 +70,22 @@
 	 	 $('div').tooltip({
 	 		
 			content: function(){
-				return "서울 시간 글자가 더 추가되면";
+				return function(){
+					//시간 얻어옴
+				}
 			}
-		}) 
+		})
+		
+		//서울 기준
+		var newyork = -13;
+		var beijing = -1;
+		var london = -9;
+		var moscow = -6;
+		
+		var getTime = function(){
+			var date = new Date();
+			
+		}
 		
 		 
 		 

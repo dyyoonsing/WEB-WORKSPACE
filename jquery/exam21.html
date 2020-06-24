@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		border : 3px solid pink;
+		padding : 10px;
+	}
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			
+			//$('p').remove()
+			//$('div').remove()
+			//$('div').empty()	//그 안에 후손들을 지우는거
+			//$('#id01').remove()
+			//$('#id01').empty()
+			//$('.c01').remove()
+			//$('p.c01').remove()
+			//$('p').remove('.c01')	//p태그 중에 클래스가 c01인걸 지우고 싶어! 위에랑 같음
+			
+			//$('p#id01').remove()
+			//$('p.c01').remove()
+			$('p').remove('#id01, .c01')
+			
+			
+			/* 
+			var tags = document.getElementsByTagName('p')
+			for(let i = 0; i < tags.length; i++){
+				tags[i].parentNode.removeChild(tags.[i])	
+			}
+			 */
+			
+		})
+		
+		
+	})
+</script>
+</head>
+<body>
+	<div>
+		<p id="id01">나는 홍길동입니다</p>
+		<mark class='c01'>나는 윤길동입니다</mark><br>
+		나는 고길동입니다<br>
+		<p class='c01'>나는 한길동입니다</p>
+		<p>나는 강길동입니다</p>
+	</div>
+	<p class='c01'>나는 박길동입니다</p>
+	<button id="btn">삭제</button>
+</body>
+</html>

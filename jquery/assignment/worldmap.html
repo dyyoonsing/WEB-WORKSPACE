@@ -22,9 +22,9 @@
 	
 	.ui-tooltip-content{
 		background-color:white;
-		width:100px;
+		width:200px;
 		height:100px;
-		padding:0px;
+		padding:5px;
 		border-radius:0;
 		border: 1px solid black;
 		
@@ -70,22 +70,40 @@
 	 	 $('div').tooltip({
 	 		
 			content: function(){
-				return function(){
-					//시간 얻어옴
-				}
+				var nation = $(this).attr('title')
+				var num = getTime(nation)
+				
+				
+				return nation + "\n" +num
 			}
 		})
 		
-		//서울 기준
-		var newyork = -13;
-		var beijing = -1;
-		var london = -9;
-		var moscow = -6;
 		
-		var getTime = function(){
-			var date = new Date();
+		
+		var getTime = function(nation){
+			 //서울 기준
+			var newyork = -13;
+			var beijing = -1;
+			var london = -9;
+			var moscow = -6;
 			
-		}
+			var now = new Date();
+			var hour = now.getHours();
+			if(nation == "NEWYORK"){
+				hour -= 13
+			}else if(nation == "BEIJING"){
+				hour -= 1
+			}else if(nation == "LONDON"){
+				hour -= 9
+			}else if(nation == "MOSCOW"){
+				hour -= 6
+			}
+			//시간
+			//분
+			//초
+			var time = hour + " : " + now.getMinutes() + " : " + now.getSeconds()
+			return time
+		} 
 		
 		 
 		 
@@ -93,10 +111,10 @@
 </script>
 </head>
 <body>
- 	<div id="seo" title=""></div>
-	<div id="bei" title=""></div>
-	<div id="new" title=""></div>
-	<div id="lon" title=""></div>
-	<div id="mos" title=""></div> 
+ 	<div id="seo" title="SEOUL"></div>
+	<div id="bei" title="BEIJING"></div>
+	<div id="new" title="NEWYORK"></div>
+	<div id="lon" title="LONDON"></div>
+	<div id="mos" title="MOSCOW"></div> 
 </body>
 </html>

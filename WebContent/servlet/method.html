@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- http://localhost:9999/Lecture-WEB/method -->
+	<!-- 요청 -->	
+	<!-- <a href ="/Lecture-WEB/method">요청</a>를 할거야!
+		method를 안쓰면 기본적으로 get 방식!  default가 get  -->
+		
+	<form action="/Lecture-WEB/method" method="get">
+		ID : <input type="text" name="id">
+		<input type="submit" value="get방식 호출">
+	</form>
+	
+	<form action="/Lecture-WEB/method" method="post">
+		ID : <input type="text" name="id">
+		<input type="submit" value="post방식 호출">
+	</form>
+</body>
+</html>

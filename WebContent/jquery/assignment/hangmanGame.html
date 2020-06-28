@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+
+	body{
+		text-align: center;
+		font-family: 'Cantarell', 'Noto Sans KR';
+		background-color: #FFF8DC;
+	}
+	
+	#img{
+		width:400px;
+		height:400px;
+		background-color: white;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top : 10px;
+		margin-bottom : 10px;
+	}
+	
+	button{
+		background-color:white;
+	    border-color: pink;
+	    text-align: center;
+	    padding: .5em 1em .55em;
+	    border-radius: 10px;
+	    
+	}
+	
+</style>
+<script>
+
+	$(document).ready(function(){
+		
+		//정답 배열
+		let answers = ["mangosteen", "dragonfruit", "pineapple", "orange"];
+
+
+	 		
+		//정답 랜던으로 뽑아내기 (이후에 정답 후보를 추가해도 되도록 answers.length로 추출)
+		var random = Math.floor(Math.random()*answers.length)
+		console.log(answers[random])
+		
+		//답 글자수대로 넣어놓기 위해 배열 형태
+		var question = []		
+		for(var i = 0; i < answers[random].length; i++){
+			question[i] = "_";
+		}
+		
+		//#question div에 문제 출력
+		$('h2').text(question.join(" "))
+	 		
+	
+		
+		
+		//#alphabet div에 알파벳 버튼 생성
+		for(var i = 97; i <=122; i++){
+			var a = String.fromCharCode(i)
+			var b = $('#alphabet').append('<button class="alp">' + a + '</button>')			
+		}
+		
+		
+		//기회는 총 10번
+		let chance = 0
+		//그림 10개를 배열로 넣어놓는다
+		var hangmanImg = ["https://ifh.cc/g/cYH3lN.jpg", "https://ifh.cc/g/HlerEA.jpg", 
+			"https://ifh.cc/g/eYy4uX.jpg", "https://ifh.cc/g/0rguTg.jpg", 
+			"https://ifh.cc/g/TIInCx.jpg", "https://ifh.cc/g/I8T9SU.jpg", 
+			"https://ifh.cc/g/MAp2HR.jpg", "https://ifh.cc/g/8S6ohN.jpg", 
+			"https://ifh.cc/g/IoFuhR.jpg",
+			"https://ifh.cc/g/CaFBAC.jpg", "https://ifh.cc/g/1L2gGp.jpg"] 
+		//[9], [10]은 각각 youlose, youwin 이미지
+		
+		
+		//알바펫 버튼 click 이벤트
+		$('.alp').on('click', function() {
+			var mySelect = $(this).text()
+			//버튼을 선택하고나면 비활성화한다
+			$(this).attr("disabled", "disabled")
+			
+			if(answers[random].indexOf(mySelect) == -1){
+				//선택한 단어가 없을때
+				wrongFunc()
+			}else{
+				//선택한 단어가 있을때
+				for(var j = 0; j < answers[random].length; j++){
+					var temp = answers[random].indexOf(mySelect, j)
+					question[temp] = mySelect
+					if(temp == -1){
+						break;
+					}
+				}
+				$('h2').text(question.join(" "))
+				if(question.indexOf("_") == -1){
+					//전부 다 맞췄을 경우!
+					correctFunc()
+				}
+			}
+			
+		})
+		
+		//정답입력
+		$('#myAnswer').on('click', function(){			
+			if($('#myText').val() == ''){
+				alert('빈칸입니다ㅜㅜ 다시 입력하세요~')
+			}else if($('#myText').val() == answers[random]){
+				alert('정답입니다:) 축하합니다!!')
+				correctFunc()
+			}else{
+				alert('오답입니다:(')
+				wrongFunc()
+			}
+			 
+		})
+		
+		
+		//오답일때
+		let wrongFunc = function(){
+			
+			$('#img').html('<img src="' + hangmanImg[chance] + '" >')
+			chance++			
+			//기회 10번을 넘길때 youlose 이미지가 뜨고 모든 버튼이 비활성화된다, 정답 단어가 뭔지 보여준다
+			if(chance >= 10){
+				$('.alp').attr("disabled", "disabled")
+				$('#myAnswer').attr("disabled", "disabled")
+				$('#img').html('<img src="' + hangmanImg[9] + '" >')
+				$('h2').text("정답은 : " + answers[random])
+			}
+					
+		}
+		
+		//정답일때
+		let correctFunc = function(){
+			$('#img').html('<img src="' + hangmanImg[10] + '" >')
+			$('.alp').attr("disabled", "disabled")
+			$('#myAnswer').attr("disabled", "disabled")
+			$('h2').text("정답은 : " + answers[random])
+		}
+
+
+		$('#newgame').on('click', function(){
+			//페이지 새로고침
+			location.reload()
+		}) 
+		
+		
+		
+	})
+
+</script>
+</head>
+<body>
+	<h1>HANGMAN GAME</h1>
+	<div id="question"><h2></h2></div>
+	<div id="alphabet"></div>
+	<div id="hangman">
+		<div id="img"></div>
+	</div>
+	<div id="buttons">
+		정답을 입력하세요 : <input type="text" id="myText">
+		<button id="myAnswer">확인</button><br><br>
+		<button id="newgame">새게임</button>
+	</div>
+	
+</body>
+</html>
